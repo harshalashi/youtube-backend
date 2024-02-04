@@ -28,4 +28,10 @@ app.use(express.static("public"));
 // Thus configuring for Cookies
 app.use(cookieParser());
 
+//routes
+import userRouter from "./routes/user.routes.js";
+
+//routes declaration:
+app.use("/users", userRouter);
+
 export { app };
