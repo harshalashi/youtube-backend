@@ -1,6 +1,6 @@
 // APPROACH 1: Write code in another folder say DB, then import that code here (more professional approach)
 import dotenv from "dotenv";
-
+import { app } from "./app.js";
 import connectDB from "./db/index.js";
 
 dotenv.config({
