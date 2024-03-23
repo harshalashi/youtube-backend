@@ -10,7 +10,7 @@ const userSchema = new Schema(
       unique: true,
       lowercase: true,
       trim: true,
-      index: true,
+      index: true, //This optimizes the searching operation
     },
     email: {
       type: String,
@@ -52,7 +52,8 @@ const userSchema = new Schema(
 );
 
 userSchema.pre("save", async function (next) {
-  this.password = bcrypt.hash(this.password, 10);
+  if (!this.isModified("password")) return next();
+  this.password = await bcrypt.hash(this.password, 10);
   next();
 });
 

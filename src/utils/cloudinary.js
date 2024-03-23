@@ -1,5 +1,5 @@
 import { v2 as cloudinary } from "cloudinary";
-import fs from "fs";
+import fs from "fs"; //This is file system provided by node js. It can be used to open, read, write, etc
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
